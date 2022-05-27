@@ -1,4 +1,4 @@
 # YouTubeAudio
 WebExtension to redirect YouTube to audio-only
 
-When enabled using the browser button, all YouTube video pages will be redirected to an audio-only stream.
+Click on the browser button to access the settings. Files can now be limited by seconds or bytes.
