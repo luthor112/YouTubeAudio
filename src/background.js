@@ -33,7 +33,14 @@ function audioRedir(requestDetails) {
               audioURI = audioURI + "&range=0-" + (Number(requestObject.searchParams.get("clen")) + downloadLimitBytes).toString();
             }
           } else {
-            audioURI = audioURI + "&range=0-" + downloadLimit;
+            var requestObject = new URL(requestDetails.url);
+            var downloadLimitBytes = Number(downloadLimit);
+
+            if (downloadLimitBytes > 0) {
+              audioURI = audioURI + "&range=0-" + downloadLimitBytes.toString();
+            } else {
+              audioURI = audioURI + "&range=0-" + (Number(requestObject.searchParams.get("clen")) + downloadLimitBytes).toString();
+            }
           }
         }
 
